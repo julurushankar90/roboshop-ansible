@@ -63,6 +63,7 @@
       record: "{{ item }}-{{ env }}.{{ domain_name }}" # roboshop-dev.julurushankar.online,
       type: A
       ttl: 1
+      
     loop: "{{ instances }}"
     when: action == "destroy"
 
