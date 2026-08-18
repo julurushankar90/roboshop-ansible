@@ -42,7 +42,7 @@
       value: "{{ item.instances[0].private_ip_address }}"
       wait: true
     loop: "{{ec2_output.results }}"
-
+    
   - name: create r53 records
     amazon.aws.route53:
       state: present
@@ -63,7 +63,7 @@
       record: "{{ item }}-{{ env }}.{{ domain_name }}" # roboshop-dev.julurushankar.online,
       type: A
       ttl: 1
-      
+
     loop: "{{ instances }}"
     when: action == "destroy"
 
