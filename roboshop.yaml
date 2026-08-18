@@ -31,7 +31,6 @@
     ansible.builtin.debug:
       msg: "{{ ec2_output }}"
     when: action == "create"
-
   - name: create r53 records
     amazon.aws.route53:
       state: present
@@ -42,7 +41,7 @@
       value: "{{ item.instances[0].private_ip_address }}"
       wait: true
     loop: "{{ec2_output.results }}"
-    
+
   - name: create r53 records
     amazon.aws.route53:
       state: present
