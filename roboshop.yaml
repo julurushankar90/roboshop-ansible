@@ -3,9 +3,9 @@
   hosts: all
   connection: local
   vars:
-    sg_id: sg-076ec9ad23dab2b28
+    sg_id: sg-06340b43410293454 
     ami_id: ami-0220d79f3f480ecf5
-    domain_name: daws88s.online
+    domain_name: julurushankar.online
     env: dev
     action: create
     instances:
